@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unofficial Transcript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
             text-align: center;
-            padding: 20px;
         }
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
+            max-width: 900px;
             margin: auto;
+            text-align: left;
         }
-        h1, h2 {
-            color: #007BFF;
+        h1 {
+            font-size: 24px;
+        }
+        .header {
+            text-align: center;
+            font-weight: bold;
         }
         table {
             width: 100%;
@@ -29,95 +29,107 @@
             margin-top: 20px;
         }
         th, td {
-            border: 1px solid #000;
+            border: 1px solid black;
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #007BFF;
-            color: white;
+            background-color: #f2f2f2;
         }
-        .logout-btn {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .logout-btn:hover {
-            background-color: darkred;
+        @media (max-width: 600px) {
+            body {
+                margin: 20px;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            tr {
+                margin-bottom: 10px;
+            }
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Unofficial Transcript</h1>
-        <h2>University of Science and Technology</h2>
+        <div class="header">
+            <h1>Unofficial Transcript</h1>
+            <p>University of Science and Technology<br>
+            Office of the Registrar<br>
+            Ahmed Zewail Road, October Gardens, 6th of October, Giza, Egypt, 12588</p>
+        </div>
         <p><strong>Name:</strong> Abdallah Ragab Al Ali</p>
-        <p><strong>Program:</strong> Bachelor of Science in Software Development</p>
+        <p><strong>Program / Degree / Curriculum:</strong> Undergraduate/Bachelor of Science/Software Development</p>
+        <p><strong>Previous Institution:</strong> Alnasseryah Private Secondary School, Arab Thanaweya</p>
         <p><strong>Cumulative GPA:</strong> 3.6</p>
 
+        <h2>2024 Fall - University of Science and Technology</h2>
         <table>
-            <tr>
-                <th>Course</th>
-                <th>Title</th>
-                <th>Grade</th>
-                <th>Credits</th>
-            </tr>
-            <tr>
-                <td>CSAI 100</td>
-                <td>Intro to Computational Science and AI</td>
-                <td>A</td>
-                <td>1.00</td>
-            </tr>
-            <tr>
-                <td>CSAI 101</td>
-                <td>Fundamentals of Programming and CS</td>
-                <td>A-</td>
-                <td>2.00</td>
-            </tr>
-            <tr>
-                <td>CSAI 102</td>
-                <td>Digital Logic and Computer Architecture</td>
-                <td>A-</td>
-                <td>3.00</td>
-            </tr>
-            <tr>
-                <td>CSAI 252</td>
-                <td>Introduction to Computer Networks</td>
-                <td>A</td>
-                <td>3.00</td>
-            </tr>
-            <tr>
-                <td>Math 103</td>
-                <td>Calculus for Computational Science</td>
-                <td>B+</td>
-                <td>3.00</td>
-            </tr>
-            <tr>
-                <td>SCH 163</td>
-                <td>Sustain, Social & Ethical Issues in Comp</td>
-                <td>B</td>
-                <td>2.00</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>Subtype</th>
+                    <th>Grade</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Course">CSAI 100</td>
+                    <td data-label="Title">Intro to Computational Science and AI</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">A</td>
+                    <td data-label="Credits">1.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">CSAI 101</td>
+                    <td data-label="Title">Fundamentals of Programming and CS</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">A-</td>
+                    <td data-label="Credits">2.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">CSAI 102</td>
+                    <td data-label="Title">Digital Logic and Computer Architecture</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">A-</td>
+                    <td data-label="Credits">3.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">CSAI 252</td>
+                    <td data-label="Title">Introduction to Computer Networks</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">A</td>
+                    <td data-label="Credits">3.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">Math 103</td>
+                    <td data-label="Title">Calculus for Computational Science</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">B+</td>
+                    <td data-label="Credits">3.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">SCH 163</td>
+                    <td data-label="Title">Sustain, Social & Ethical Issues in Comp</td>
+                    <td data-label="Subtype">LECTURE</td>
+                    <td data-label="Grade">B</td>
+                    <td data-label="Credits">2.00</td>
+                </tr>
+            </tbody>
         </table>
-
-        <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (localStorage.getItem("loggedIn") !== "true") {
-                window.location.href = "index.html";
-            }
-        });
-
-        function logout() {
-            localStorage.removeItem("loggedIn");
-            window.location.href = "index.html";
-        }
-    </script>
 </body>
 </html>
