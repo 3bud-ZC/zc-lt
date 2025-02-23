@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unofficial Transcript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .logout-btn {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .logout-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unofficial Transcript</h1>
+        <h2>University of Science and Technology</h2>
+        <p><strong>Name:</strong> Abdallah Ragab Al Ali</p>
+        <p><strong>Program:</strong> Bachelor of Science in Software Development</p>
+        <p><strong>Cumulative GPA:</strong> 3.6</p>
+
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Title</th>
+                <th>Grade</th>
+                <th>Credits</th>
+            </tr>
+            <tr>
+                <td>CSAI 100</td>
+                <td>Intro to Computational Science and AI</td>
+                <td>A</td>
+                <td>1.00</td>
+            </tr>
+            <tr>
+                <td>CSAI 101</td>
+                <td>Fundamentals of Programming and CS</td>
+                <td>A-</td>
+                <td>2.00</td>
+            </tr>
+            <tr>
+                <td>CSAI 102</td>
+                <td>Digital Logic and Computer Architecture</td>
+                <td>A-</td>
+                <td>3.00</td>
+            </tr>
+            <tr>
+                <td>CSAI 252</td>
+                <td>Introduction to Computer Networks</td>
+                <td>A</td>
+                <td>3.00</td>
+            </tr>
+            <tr>
+                <td>Math 103</td>
+                <td>Calculus for Computational Science</td>
+                <td>B+</td>
+                <td>3.00</td>
+            </tr>
+            <tr>
+                <td>SCH 163</td>
+                <td>Sustain, Social & Ethical Issues in Comp</td>
+                <td>B</td>
+                <td>2.00</td>
+            </tr>
+        </table>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("loggedIn") !== "true") {
+                window.location.href = "index.html";
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
